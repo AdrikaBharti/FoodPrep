@@ -1,0 +1,149 @@
+
+.place-order{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap:50px;
+    margin-top: 100px;
+    font-size: 1.6rem;
+}
+
+.place-order-left{
+    width:100%;
+    max-width: max(30%,500px);
+}
+
+.place-order-left .title{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Poppins', sans-serif;  
+    color: var(--theme-color);
+    letter-spacing: 0.5px;  
+    text-transform: capitalize; 
+}
+
+.place-order-left .title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--theme-color);
+  margin-top: 8px;
+}
+
+
+
+.place-order-left input{
+    margin-bottom: 15px;
+    width: 100%;
+    padding:10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline: var(--theme-color);
+}
+
+.place-order-left .multi-fields{
+    display: flex;
+    gap:10px;
+}
+.place-order-right .title{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Poppins', sans-serif;  
+    color: var(--theme-color);
+    letter-spacing: 0.5px;  
+    text-transform: capitalize; 
+}
+.place-order-right .title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--theme-color);
+  margin-top: 8px;
+}
+
+.place-order-right{
+    width: 100%;
+    max-width: max(40%,500px);
+}
+
+.place-order .cart-total button{
+  background: var(--theme-color);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1.4rem;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.place-order .cart-total button:hover{
+ background: #3a3a3a;
+}
+.input-group {
+  margin-bottom: 15px;
+}
+
+.error {
+  color: #ff4444;
+  font-size: 1.2rem;
+  margin-top: 4px;
+  display: block;
+}
+
+
+input:invalid {
+  border-color: #ff4444;
+}
+
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+@media(max-width:815px){
+    .place-order-left .title{
+        font-size: 25px;
+    }
+    .place-order-right .title{
+         font-size: 25px;
+    }
+}
+
+@media (max-width:750px){
+    .place-order{
+        flex-direction: column;
+    }
+    .place-order-right{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 600px) {
+  .place-order {
+    padding: 20px;
+    margin-top: 60px;
+  }
+  
+  .multi-fields {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .payment-btn {
+    padding: 12px;
+  }
+}
