@@ -49,7 +49,7 @@ const Orders = ({url}) => {
                       order.address.country+", "+order.address.zip_code+", "
                     }</p>
                     </div>
-                  <p classname="order-item-phone">{order.address.phone}</p>
+                  <p className="order-item-phone">{order.address.phone}</p>
                 </div>
                 <p>Items:{order.items.length}</p>
                 <p>₹{order.amount}</p>
