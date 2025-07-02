@@ -26,8 +26,8 @@ const Orders = ({url}) => {
     fetchAllOrders()
   },[])
   return (
-    <div className="screen-order">
-      <h3 className='title'>Orders Page</h3>
+    <div className="screen order">
+      <h3>Order Page</h3>
       <div className="order-list">
         {orders.map((order,index)=>{
           return (
