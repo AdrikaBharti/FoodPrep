@@ -44,4 +44,43 @@ const registerUser = async(req,res)=>{
         res.status(500).json({"message":"Internal Server Error"})
     }
 }
-module.exports = {loginUser,registerUser}
+
+
+const addToWishlist = async (req, res) => {
+    try {
+        const user = await userModel.findById(req.userId);
+        if (!user.wishlist.includes(req.body.itemId)) {
+            user.wishlist.push(req.body.itemId);
+            await user.save();
+        }
+        res.json({ success: true, wishlist: user.wishlist });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Error adding to wishlist" });
+    }
+};
+
+const removeFromWishlist = async (req, res) => {
+    try {
+        const user = await userModel.findById(req.userId);
+        user.wishlist = user.wishlist.filter(id => id !== req.body.itemId);
+        await user.save();
+        res.json({ success: true, wishlist: user.wishlist });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Error removing from wishlist" });
+    }
+};
+
+const getWishlist = async (req, res) => {
+    try {
+        const user = await userModel.findById(req.userId);
+        res.json({ wishlist: user.wishlist });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Error fetching wishlist" });
+    }
+};
+
+
+module.exports = {loginUser,registerUser,addToWishlist,removeFromWishlist,getWishlist };

@@ -1,0 +1,8 @@
+.Searchbar{
+    padding: 30px;
+}
+@media (max-width:1070px){
+    .Searchbar{
+        display: none;
+    }
+}

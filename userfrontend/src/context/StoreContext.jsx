@@ -1,11 +1,13 @@
-import { createContext,useState,useEffect } from "react";
+
+import {React,createContext,useState,useEffect } from "react";
 import axios from 'axios'
 export const StoreContext = createContext();
 const StoreContextProvider = ({children})=>{
     const [cartItems,setCartItems] = useState({})
     const [food_list,setFoodList] = useState([])
-    const url = 'https://backend-foodprepvit.onrender.com'
+    const url = 'https://food-delivery-backend-5b6g.onrender.com'
     const [token,setToken] = useState("")
+    const [wishlist, setWishlist] = useState([])
 
     const fetchFoodList = async()=>{
         const response = await axios.get(url+'/api/food/list')
@@ -65,6 +67,17 @@ const StoreContextProvider = ({children})=>{
         }
         return total;
     }
+   
+   const [wishlistItems, setWishlistItems] = useState({});
+
+      const toggleWishlist = (id) => {
+           setWishlistItems((prev) => ({ ...prev,
+                [id]: !prev[id],
+          }));
+    };
+
+
+
 
     const contextValue={
         cartItems,
@@ -73,6 +86,8 @@ const StoreContextProvider = ({children})=>{
         addToCart,
         removeFromCart,
         getTotalCartAmount,
+        wishlistItems,
+        toggleWishlist,
         url,
         token,
         setToken

@@ -76,3 +76,11 @@
 .food-item-counter img{
   width: 30px;;
 }
+
+.wishlist-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  z-index: 1;
+}

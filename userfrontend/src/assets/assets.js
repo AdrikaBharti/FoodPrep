@@ -1,5 +1,8 @@
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
+import wishlist from './wishlist.png'
+import heartFilled from './heartFilled.png'
+import heartOutline from './heartOutline.png'
 import logo_bottom from './logo-bottom.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
@@ -81,7 +84,10 @@ export const assets = {
     profile_icon,
     logout_icon,
     bag_icon,
-    parcel_icon
+    parcel_icon,
+    wishlist,
+    heartFilled,
+    heartOutline
 }
 
 export const menu_list = [

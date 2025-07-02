@@ -48,5 +48,20 @@ const removeFood = async(req,res)=>{
         res.status(500).json({"message":"Error deleting foods"})        
     }
 }
+const foodItemModel = require('../models/foodModel');
 
-module.exports = {addFood,listFood,removeFood}
+const searchFoodItems = async (req, res) => {
+    try {
+        const query = req.query.q;
+        const results = await foodItemModel.find({
+            name: { $regex: query, $options: 'i' }
+        });
+        res.json({ data: results });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+
+module.exports = {addFood,listFood,removeFood,searchFoodItems}
